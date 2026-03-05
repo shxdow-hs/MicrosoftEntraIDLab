@@ -1,8 +1,8 @@
-<h1>Active Directory Home Lab</h1>
+<h1>Microsoft Entra ID Lab</h1>
 
 
 <h2>Description</h2>
-In this lab I'll be working in Microsoft Entra ID. I will be performing onboarding of new accounts, creating and assigning a user to a new group, utilizing RBAC and secure offboarding.
+In this lab I'll be working in Microsoft Entra ID. I will be performing onboarding of new accounts, creating and assigning a user to a new group, utilizing RBAC, enabling/enforcing MFA and secure offboarding.
 <br />
 
 
