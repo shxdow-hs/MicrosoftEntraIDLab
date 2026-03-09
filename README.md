@@ -63,5 +63,17 @@ After the account is created in the Entra ID tenant an email is sent to my inbox
 <br />
 <br />
 
-<h3>Step 3:</h3>
+<h3>Step 3: Access the Entra ID tenant - Create a Security Group</h3>
+After creating my employee onboarding form and automated the onboarding process, I accessed the Microsoft Entra Admin Center to create a couple of dynamic security groups.
+<br />
+<br />
+On the left side of screen, navigate to Entra ID --> Groups. 
+<br />
+<br />
+At the top of the Groups Overview page click on New Group.
+<br />
+<br />
+<img src="https://i.imgur.com/DJbVuLM.jpeg" height="80%" width="80%" alt="Groups Page"/><br/>
+<br />
+  
 </p>
