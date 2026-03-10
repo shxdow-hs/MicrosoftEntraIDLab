@@ -75,5 +75,8 @@ At the top of the Groups Overview page click on New Group.
 <br />
 <img src="https://i.imgur.com/DJbVuLM.jpeg" height="80%" width="80%" alt="Groups Page"/><br/>
 <br />
-  
+For this lab example, I have created a Dynamic Security Group called "HelpDesk."
+As shown earlier, new employees will enter their department name in the onboarding form. 
+That department name will be gathered from my workflow to assign them to the corresponding Security Group configured with least privilege appropriate roles.
+
 </p>
