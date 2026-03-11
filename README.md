@@ -55,7 +55,7 @@ The account is created after the email notification is sent.
 Each newly created account will be disabled by default. New accounts will be enabled on the employee's start date after the account has been reviewed by the IAM analyst.
 A default password is assigned to the new account and I utilize the employee's email submission to create the User Principal Name (UPN).
 Using the Department submission, the user will be assigned to a Security Group associated with it.
-The employee's Job Tile and Mobile Phone number will also be populated.
+The employee's Job Title and Mobile Phone number will also be populated.
 <br />
 <br />
 <img src="https://i.imgur.com/3kcT8wv.png" height="80%" width="80%" alt="Account Created Notification"/><br/>
@@ -64,19 +64,84 @@ After the account is created in the Entra ID tenant an email is sent to my inbox
 <br />
 
 <h3>Step 3: Access the Entra ID tenant - Create a Security Group</h3>
-After creating my employee onboarding form and automated the onboarding process, I accessed the Microsoft Entra Admin Center to create a couple of dynamic security groups.
+After creating my employee onboarding form and automated the onboarding process, I accessed the Microsoft Entra Admin Center to create a dynamic security group I'll use later in the lab.
 <br />
 <br />
-On the left side of screen, navigate to Entra ID --> Groups. 
+On the left side of the screen, navigate to Entra ID --> Groups. 
 <br />
 <br />
 At the top of the Groups Overview page click on New Group.
 <br />
 <br />
-<img src="https://i.imgur.com/DJbVuLM.jpeg" height="80%" width="80%" alt="Groups Page"/><br/>
+<img src="https://i.imgur.com/DJbVuLM.jpeg" height="80%" width="80%" alt="Groups Page"/>
+Select Security under the Group Type.
 <br />
-For this lab example, I have created a Dynamic Security Group called "HelpDesk."
-As shown earlier, new employees will enter their department name in the onboarding form. 
-That department name will be gathered from my workflow to assign them to the corresponding Security Group configured with least privilege appropriate roles.
+<br />
+HelpDesk will be the Group Name in this case.
+<br />
+<br />
+I selected No to the Entra roles option as I want this group to have a Dynamic User Membership type to work with the workflow I created.
+<br />
+<br />
+<img src="https://i.imgur.com/Rk3vKSj.jpeg" height="80%" width="80%" alt="Groups Page"/>
+Click Add dynamic query.
+<br />
+<br />
+In the new window, select Department under Property.
+<br />
+<br />
+Equals under Operator and enter HelpDesk in the Value text box.
+<br />
+<br />
+<img src="https://i.imgur.com/VIPn5vX.jpeg" height="80%" width="80%" alt="Groups Page"/>
+Anytime a user account is given the Department name HelpDesk they will be added to this HelpDesk Security Group.
+<br />
+<br />
+
+<h3>Step 4: Enabling Multi-Factor Authentication (MFA) </h3>
+Multi-Factor Authentication is essential to strengthening authentication, reducing account compromise and unauthorized access. Passwords alone are not sufficient to protect enterprise identities.
+<br />
+<br />
+To access the Authentication Methods navigate to Entra ID --> Protection --> Authentication Methods.
+<br />
+<br />
+<img src="https://i.imgur.com/dgPqbQW.jpeg" height="80%" width="80%" alt="Groups Page"/>
+To ensure strong authentication methods are used, I have enabled the following:
+<br />
+<br />
+- Microsoft Authenticator
+<br />
+<br />
+- Temporary Access Pass
+<br />
+<br />
+- Software OATH Tokens
+<br />
+<br />
+- Email OTP
+<br />
+<br />
+Now that the authentication methods have been set they must be enforced through with a Conditional Access policy.
+<br />
+<br />
+Navigate to ID Protection --> Risk-based Conditional Access --> New Policy.
+<br />
+<br />
+<img src="https://i.imgur.com/4XkHpHH.jpeg" height="80%" width="80%" alt="Groups Page"/>
+Next, I gave the new policy name and assigned 3 controls used to enforce the Multi-Factor Authentication. 
+<br />
+<br />
+Under Assignments, this policy will apply to all users.
+<br />
+<br />
+<img src="https://i.imgur.com/XR116cn.jpeg" height="80%" width="80%" alt="Groups Page"/>
+In Target Resources, MFA will be enforced when accessing the Microsoft Admin Portals.
+<br />
+<br />
+<img src="https://i.imgur.com/pRJaMNV.jpeg" height="80%" width="80%" alt="Groups Page"/>
+Under Access Controls, access is to be granted and requires multifactor authentication 
+<br />
+<br />
+<img src="https://i.imgur.com/FY0qqyr.jpeg" height="80%" width="80%" alt="Groups Page"/>
 
 </p>
