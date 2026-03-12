@@ -13,7 +13,7 @@ This lab has exposed me to working with an enterprise identity environment and s
 - <b>Microsoft Power Automate</b> 
 - <b>Microsoft Forms</b>
 
-<h2>Lab walk-through:</h2>
+<h2>Lab Walkthrough:</h2>
 
 <p>
 <h3>Step 1: Microsoft Forms - New Employee Onboarding Form</h3>
