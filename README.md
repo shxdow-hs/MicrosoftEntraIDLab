@@ -142,6 +142,118 @@ In Target Resources, MFA will be enforced when accessing the Microsoft Admin Por
 Under Access Controls, access is to be granted and requires multifactor authentication 
 <br />
 <br />
+Enable the policy and Save
 <img src="https://i.imgur.com/FY0qqyr.jpeg" height="80%" width="80%" alt="Groups Page"/>
+
+
+<h3>Step 5: Onboarding/Provisioning Walkthrough</h3>
+Time to create a new user now that the Onboarding form is created, the automated workflow is configured and the Entra ID environment is ready to go.
+<br />
+<br />
+<p><b>5.1) Submitting the New Employee Onboarding Form</b></p>
+Here is a simulated new employee onboarding form submission. 
+<br/>
+<br/>
+Jon Snow will be joining the company as an IT Support Analyst apart of the HelpDesk Department. 
+<img src="https://i.imgur.com/lAR27yh.png" height="80%" width="80%" alt="Groups Page"/>
+
+<p><b>5.2) Verify the new account in Entra ID</b></p>
+After submission the new employee's account is created in Entra ID.
+<br/>
+<br/>
+Navigate to Entra ID --> Users --> All Users.
+<br/>
+<br/>
+Click on the new user and review the information.
+<br/>
+<br/>
+The account can be seen populated with the employee's Full Name, Email Address, UPN, Identity, Group Membership and Account Status.
+<br/>
+<br/>
+The account is disabled for now until after account verification and role assignment have been completed.
+<img src="https://i.imgur.com/K0mY7yT.jpeg" height="80%" width="80%" alt="Groups Page"/>
+While in the account profile, click on Groups to see the account group memberships.
+<img src="https://i.imgur.com/nuq50FP.jpeg" height="80%" width="80%" alt="Groups Page"/>
+
+<p><b>5.3) Role Assignment and RBAC</b></p>
+After validating the newly provisioned account, a role must be assigned to the individual's account to enforce the principle of least privilege and role-based access control.
+<br/>
+<br/>
+Since this user will be apart of the Helpdesk team, the predefined Helpdesk Administrator role will be assigned.
+<br/>
+<br/>
+The user will have the ability to reset user passwords, force change passwords, invalidate refresh tokens, manage service requests and monitor service health.
+<br/>
+<br/>
+While in the account profile, click on Assigned Roles.
+<br/>
+<br/>
+Click Add assignments.
+<br/>
+<br/>
+Search for Helpdesk Administrator and click add to assign it.
+<img src="https://i.imgur.com/75vFBDx.jpeg" height="80%" width="80%" alt="Groups Page"/>
+
+<p><b>5.4) Enabling the account</b></p>
+The final step after completing validation and role assignment is enabling the account.
+<br/>
+<br/>
+Once the account is enabled, the user may logon and conduct their daily tasks as needed.
+<br/>
+<br/>
+Navigate to Entra ID --> Users --> Jon Snow --> Overview
+<br/>
+<br/>
+Under Account Status --> Click Edit
+<br/>
+<br/>
+Account Enabled --> toggle the checkmark and save
+<img src="https://i.imgur.com/GPB5AdW.jpeg" height="80%" width="80%" alt="Groups Page"/>
+The new user account is now provisioned and ready for use.
+
+<h3>Step 6: Offboarding/Deprovisioning Walkthrough</h3>
+Offboarding and deprovisioning accounts are essential to maintain a secure environment. Accounts left unaccounted for may cause breaches due to accounts left enabled with lingering access after the employee has left the organization.
+<br/>
+<br/>
+<p><b>6.1) Remove Assigned Roles</b></p>
+Navigate to Entra ID --> Users --> Jon Snow --> Assigned Roles
+<br/>
+<br/>
+Check off Helpdesk Administrator --> click Remove assignments
+<img src="https://i.imgur.com/kSAc6BY.jpeg" height="80%" width="80%" alt="Groups Page"/>
+
+<p><b>6.2) Disable User Account</b></p>
+Navigate to Entra ID --> Users --> Jon Snow --> Overview
+<br/>
+<br/>
+Under Account Status --> Click Edit
+<br/>
+<br/>
+Account Enabled --> toggle off the checkmark and save
+<img src="https://i.imgur.com/SXHAPRV.jpeg" height="80%" width="80%" alt="Groups Page"/>
+
+<h3>Conclusion</h3>
+In this lab I've demonstrated my understanding of the Identity Lifecycle Management within Entra ID
+<br/>
+<br/>
+- Account Provisioning 
+<br/>
+<br/>
+- Role-based access control
+<br/>
+<br/>
+- Authentication & Authorization
+<br/>
+<br/>
+- Governance and compliance
+<br/>
+<br/>
+- Account Deprovisioning 
+
+
+
+
+
+
 
 </p>
